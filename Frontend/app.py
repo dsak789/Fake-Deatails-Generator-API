@@ -1,0 +1,57 @@
+import streamlit as st
+from streamlit_option_menu import option_menu
+from Home import Home
+from Api import API
+from Contact import Contact
+
+st.set_page_config(page_title="Faker 789", page_icon='🤖' ,layout="wide")
+
+color = {
+    'base':'#03001C',
+    'primary': '#301E67',
+    'secondary':'#5B8FB9',
+    'action':'#B6EADA'
+
+}
+
+
+menu = option_menu(
+    menu_title="",
+    menu_icon='chat',
+    options=['Home',"API Documentation","Contact"],
+    icons = ['house','book','envelope'],
+    default_index = 0,
+    orientation='horizontal',
+    styles={
+        "container":{
+            'padding':'5!important',
+            'background-color':color['base'],
+            'margin':'1px'},
+        'icon':{'color':'','font-size':'15px'},
+        'nav-link':{
+            'font-size':'20px',
+            'tex-align':'left',
+            'color':color['action'],
+            'margin':'5px',
+            'font-family':'Times NewRoman',
+            '--hover-color':color['secondary']
+        },
+        'nav-link-selected':{
+            'color':color['primary'],
+            'background-color':color['action'],
+            'font-family':'calibri'
+            
+        },
+    }
+
+)
+
+if menu == "Home":
+    Home.header()
+    Home.html()
+if menu == "API Documentation":
+    st.header(":blue[Faker API Documentation]",divider=True)
+    API.header()
+if menu == "Contact":
+    st.header(":blue[Faker Contact]",divider=True)
+    Contact.show_contact_info()
