@@ -13,6 +13,5 @@ class API:
                 <iframe src="{api['link']}" width="70%" height="200px" frameborder="0"></iframe>
                 '''
                 st.markdown(ifr, unsafe_allow_html=True)
-                st.snow()
-                st.balloons()
+                
 
