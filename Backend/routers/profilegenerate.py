@@ -19,8 +19,9 @@ def gen_profiles(no : int):
         profiles = []
         if no <=47:
             for i in range(no):
-                profiles = faker.profile()
-                profiles["imgurl"] = faker.image_url()
+                profile = faker.profile()
+                profile["imgurl"] = faker.image_url()
+                profiles.append(profile)
             return profiles
         else:
             return {"Message":"This API will Generate upto 47 Profiles per request "}
