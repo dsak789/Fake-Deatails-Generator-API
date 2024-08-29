@@ -10,6 +10,7 @@ class ALLAPIS():
                 "linkId" : uuid.uuid1(),
                 "title" : "Generate Uniuque Profile",
                 "link" : "https://faker789.vercel.app/generate-profile",
+                "res_link" : "https://faker789.vercel.app/generate-profile",
                 "description" : "",
 
             },
@@ -17,6 +18,7 @@ class ALLAPIS():
                 "linkId" : uuid.uuid1(),
                 "title" : "Generate Uniuque Profiles",
                 "link" : "https://faker789.vercel.app/generate-profiles/<Number>",
+                "res_link" : "https://faker789.vercel.app/generate-profiles/4",
                 "description" : "",
 
             },
@@ -24,6 +26,7 @@ class ALLAPIS():
                 "linkId" : uuid.uuid1(),
                 "title" : "Generate Uniuque Profiles",
                 "link" : "https://faker789.vercel.app/generate-profiles/{int}",
+                "res_link" : "https://faker789.vercel.app/generate-profiles/2",
                 "description" : "",
 
             },

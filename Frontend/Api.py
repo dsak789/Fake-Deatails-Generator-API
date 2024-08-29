@@ -1,4 +1,6 @@
 import streamlit as st
+import requests
+import json
 from AllApis import ALLAPIS
 class API:
     @staticmethod
@@ -8,10 +10,11 @@ class API:
         for api in apilist:
             st.markdown(f"### {api['title']}")
             st.code(f"{api['link']}",language="API LINK")
+            res = requests.get(api['res_link']).json()
             if st.toggle("Show Response",key=api['link']):
-                ifr = f'''
-                <iframe src="{api['link']}" width="70%" height="200px" frameborder="0"></iframe>
-                '''
-                st.markdown(ifr, unsafe_allow_html=True)
+                st.code(f"{api['res_link']}",language="API LINK")
+                st.code(json.dumps(res, indent=4), language="json")
+                
+                
                 
 
