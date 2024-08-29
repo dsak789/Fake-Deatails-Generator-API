@@ -5,7 +5,9 @@ faker = Faker()
 @route.get('/generate-profile')
 def gen_profile():
     try:
-        return faker.profile()
+        profile = faker.profile()
+        profile["imgurl"] = faker.image_url()
+        return profile
     except:
         return {
             "Error":404,
@@ -17,7 +19,8 @@ def gen_profiles(no : int):
         profiles = []
         if no <=47:
             for i in range(no):
-                profiles.append(faker.profile())
+                profiles = faker.profile()
+                profiles["imgurl"] = faker.image_url()
             return profiles
         else:
             return {"Message":"This API will Generate upto 47 Profiles per request "}
