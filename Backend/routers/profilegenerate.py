@@ -3,6 +3,9 @@ from faker import Faker
 from routers.Attributes import functions, details
 route = APIRouter()
 faker = Faker()
+
+
+
 @route.get('/generate-profile')
 def gen_profile():
     try:
@@ -14,11 +17,13 @@ def gen_profile():
             "Error":404,
             "Message": "Unable to Generate Profile.. Try again some other Time"
         }
+    
+
 @route.get('/generate-profiles/{no}')
 def gen_profiles(no : int):
     try:
         profiles = []
-        if no <=47:
+        if no <=15:
             for i in range(no):
                 profile = faker.profile()
                 profile["imgurl"] = faker.image_url()
@@ -31,6 +36,8 @@ def gen_profiles(no : int):
             "Error":404,
             "Message": "Unable to Generate Profile.. Try again some other Time"
         }
+    
+
 @route.get('/functions')
 def gen_profiles():
     func_info =[]
@@ -42,6 +49,26 @@ def gen_profiles():
                 func_info.append({'name':fun,"deatils":"NA"})
 
         return func_info
+    except:
+        return {
+            "Error":404,
+            "Message": "Unable to Generate Functions Inforamtion.. Try again some other Time"
+        }
+    
+@route.get('/functions/atributes')
+def gen_profiles():
+    try:
+        return functions
+    except:
+        return {
+            "Error":404,
+            "Message": "Unable to Generate Functions Inforamtion.. Try again some other Time"
+        }
+    
+@route.get('/functions/information')
+def gen_profiles():
+    try:
+        return details
     except:
         return {
             "Error":404,
