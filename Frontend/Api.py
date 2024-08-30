@@ -26,7 +26,44 @@ class API:
             data = requests.get('https://faker789.vercel.app/functions')
             data = data.json()
             table = pd.DataFrame(data)
-            st.table(table)
+            st.markdown(
+            """
+            <style>
+            table {
+                border-collapse: separate;
+                width: 100%;
+                color:#03001C;
+            }
+            th {
+                background-color: #03001c;
+                text-align:center;
+                color: #b6eada;
+                padding: 10px;
+                text-align: left;
+                font-family:timesnewroman;
+                font-size:25px;
+            }
+            
+            tr:nth-child(even) {
+                background-color: grey;
+            }
+            tr:nth-child(odd) {
+                background-color: silver;
+            }
+            tr:hover {
+                background-color: white;
+                cursor:pointer;
+                color:03001C;
+                # text-transform: uppercase;
+                font-style: italic;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+
+            # Display the DataFrame using st.markdown to apply custom styles
+            st.markdown(table.to_html(index=False), unsafe_allow_html=True)
         except:
             st.warning("If Error in Attributes Displaying. Please inform through Contact")
 
