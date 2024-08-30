@@ -57,4 +57,4 @@ class Home:
 
         st.markdown("<br>", unsafe_allow_html=True)
         # st.header("🌐 Visit our Website")
-        # st.markdown("[Faker789 API Documentation](https://faker789.streamlit.app) for more details.")
+        # st.markdown("[Faker789 API Documentation](https://faker-789.streamlit.app) for more details.")
