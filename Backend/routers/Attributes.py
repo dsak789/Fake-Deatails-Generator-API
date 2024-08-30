@@ -404,5 +404,8 @@ details ={
   "words": "Generates a list of random words.",
   "year": "Generates a random year.",
   "zipcode": "Generates a random ZIP code.",
-  "zipcode_plus4": "Generates a random ZIP+4 code."
+  "zipcode_plus4": "Generates a random ZIP+4 code.",
+  "fixed_width":"Generates Something",
+  "future_datetime":"Generates Fututre DateTime",
+  "dsv":"Generates Something"
 }

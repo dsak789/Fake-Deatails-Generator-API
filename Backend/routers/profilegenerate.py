@@ -44,9 +44,17 @@ def gen_profiles():
     try:
         for fun in functions:
             if fun in functions and fun in details:
-                func_info.append({'name':fun,"deatils":details[fun]})
+                func_info.append({
+                    'Attribute':fun,
+                    "About":details[fun],
+                    # "link":f"https://faker789.vercel.app/generate/{fun}"
+                    })
             else:
-                func_info.append({'name':fun,"deatils":"NA"})
+                func_info.append({
+                    'Attribute':fun,
+                    "About": f"So Inforamtion Not Available. {fun} Attribute still in develpoment..  But Once Try if developed it return response ",
+                    # "link":f"https://faker789.vercel.app/generate/{fun}"
+                    })
 
         return func_info
     except:

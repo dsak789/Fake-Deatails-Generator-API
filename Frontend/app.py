@@ -52,6 +52,7 @@ if menu == "Home":
 if menu == "API Documentation":
     st.header(":blue[Faker API Documentation]",divider=True)
     API.header()
+    API.func_list()
 if menu == "Contact":
     st.header(":blue[Faker Contact]",divider=True)
     Contact.show_contact_info()
