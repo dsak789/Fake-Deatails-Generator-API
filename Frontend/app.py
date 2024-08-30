@@ -56,3 +56,25 @@ if menu == "API Documentation":
 if menu == "Contact":
     st.header(":blue[Faker Contact]",divider=True)
     Contact.show_contact_info()
+
+
+st.markdown("""
+            <div class="footer"> Design and Developed By DSAK789
+        &copy; 2024 <strong>Faker789</strong>. All rights reserved.
+    </div>
+<style>
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #03001C;
+        color: #B6EADA;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        border-top: 1px solid #ddd;
+    }
+</style>
+
+""",unsafe_allow_html=True)
