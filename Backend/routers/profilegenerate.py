@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from faker import Faker
+from routers.Attributes import functions, details
 route = APIRouter()
 faker = Faker()
 @route.get('/generate-profile')
@@ -29,4 +30,20 @@ def gen_profiles(no : int):
         return {
             "Error":404,
             "Message": "Unable to Generate Profile.. Try again some other Time"
+        }
+@route.get('/functions')
+def gen_profiles():
+    func_info =[]
+    try:
+        for fun in functions:
+            if fun in functions and fun in details:
+                func_info.append({'name':fun,"deatils":details[fun]})
+            else:
+                func_info.append({'name':fun,"deatils":"NA"})
+
+        return func_info
+    except:
+        return {
+            "Error":404,
+            "Message": "Unable to Generate Functions Inforamtion.. Try again some other Time"
         }
